@@ -13,7 +13,7 @@
     <title></title>
     <style>
         body {
-            height: 100%;
+            height: auto;
         }
 
         h1 {
@@ -56,7 +56,7 @@
 <body>
     <div class="home" onclick="javascript:window.history.back()">主页</div>
     <h1></h1>
-    <input id="button" type="button" value="主页">
+    <!-- <input id="button" type="button" value="主页"> -->
     <div class="recommend" id="recommend">
         <ul>
         </ul>
@@ -96,10 +96,7 @@
 
             }
         }
-        let button = document.querySelector('#button')
-        button.onclick = function () {
-            window.history.back()
-        }
+
         var obj = [{ 'id': 0, 'name': '玄幻小说', 'type': 'Fantasy' },
         { 'id': 1, 'name': '修真小说', 'type': 'ZhenZhen' },
         { 'id': 2, 'name': '都市小说', 'type': 'urban' },
