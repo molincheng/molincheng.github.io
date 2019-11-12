@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/border.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link href="common/css/flexble/flexible.css" rel="stylesheet" type="text/css" />
+    <script src="common/js/flexble/flexible.js"></script>
+    <script src="common/js/axios.js"></script>
+    <title></title>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        h1 {
+            width: 10rem;
+            height: 1.3rem;
+            font-size: .7rem;
+            text-align: center;
+            line-height: 1.3rem;
+            background: #fff;
+            font-family: '黑体';
+            border-bottom: .002rem solid #fff;
+        }
+
+        input[type=button] {
+            position: absolute;
+            bottom: 0;
+            margin: .2rem 1rem;
+            border-radius: .2rem;
+            background: rgba(190, 226, 156, 0.4);
+            width: 8rem;
+            height: 1.2rem;
+        }
+
+        .home {
+            height: 1.3rem;
+            font-size: .5rem;
+            line-height: 1.3rem;
+            position: fixed;
+            top: 2rem;
+            right: 0;
+            margin-right: -.2rem;
+            background: rgba(188, 205, 231, 0.5);
+            width: 2rem;
+            text-align:center;
+            border-radius: .2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home" onclick="javascript:window.history.back()">主页</div>
+    <h1></h1>
+    <input id="button" type="button" value="主页">
+    <div class="recommend" id="recommend">
+        <ul>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    window.onload = function () {
+        function getText(i, text, jsontype = '') {
+            var a = location.href.split('=')
+            if (a[1] == i) {
+                let title = document.title = text
+                let h1 = document.getElementsByTagName('h1')[0].innerHTML = text
+                console.log(a[1])
+                axios.get('https://a1067610892.github.io/-Novel_JSON/' + jsontype + '.json').then((res) => {
+                    var uls = this.document.querySelector('#recommend ul')
+                    let data = res.data
+                    let lis = ''
+                    for (let i = 0; i <= data.length; i++) {
+                        lis += `
+                <li>
+                <img src="${data[i].img}" alt="${data[i].name}">
+                <div class="info">
+                    <h3>${data[i].name}</h3>
+                    
+                    <span>作者：${data[i].author}</span>
+                    <span> 时间：${data[i].time}</span>
+                    
+                    <p class="intr">${data[i].introduce}</p>
+                </div>
+                </li>
+            `
+                        uls.innerHTML = lis
+                    }
+                })
+
+            }
+        }
+        let button = document.querySelector('#button')
+        button.onclick = function () {
+            window.history.back()
+        }
+        var obj = [{ 'id': 0, 'name': '玄幻小说', 'type': 'Fantasy' },
+        { 'id': 1, 'name': '修真小说', 'type': 'ZhenZhen' },
+        { 'id': 2, 'name': '都市小说', 'type': 'urban' },
+        { 'id': 3, 'name': '穿越小说', 'type': 'Passthrough' },
+        { 'id': 4, 'name': '网游小说', 'type': 'Fantasy' },
+        { 'id': 5, 'name': '科幻小说', 'type': 'Fantasy' }]
+        // console.log(obj)
+        for (let i = 0; i < obj.length; i++) {
+            getText(obj[i].id, obj[i].name, obj[i].type)
+
+        }
+
+    }
+
+
+</script>

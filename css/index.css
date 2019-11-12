@@ -1,0 +1,87 @@
+body{
+    background: beige;width: 10rem;;
+}
+.search{width: 10rem;height: 1rem;line-height: 1rem;font-size: .5rem;display: block;padding: .2rem 0rem 0rem 1rem;border-bottom: .02rem solid black;}
+.search input{background: beige;padding-left: .3rem;font-size: .55rem;}
+.Home {
+    width: 10rem;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+    display: flex;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    flex-flow:wrap;
+    margin-bottom: 0.3rem;
+}
+.Home a {
+    width: 2.7rem;
+    margin: 0.5rem 0.3rem 0rem;
+    height: 1.6rem;
+    text-align: center;
+    line-height: 1.6rem;
+    justify-content: space-between;
+    font-size: .32rem;
+    color: black;
+    text-decoration: none;
+    border-radius: .3rem;
+    border: .01rem solid;
+}
+.Home .border::before {
+    border-color: black;
+    border-radius: .6rem;
+}
+article h1{font-size: .55rem;padding: 0.3rem .5rem;font-family: '黑体';background: rgba(228, 153, 166, 0.5);}
+.recommend{
+    width: 10rem;
+    height: auto;
+    font-size: .35rem;
+    margin-top: .3rem;
+}
+.recommend ul{
+    margin-left: .2rem;
+    margin-right: .2rem;
+}
+.recommend ul li{
+    background:rgba(202, 224, 224, 0.3);
+    width: 9.6rem;
+    /* background: pink; */
+    margin: .2rem 0rem;
+    width: auto;
+    height: auto;
+}
+.recommend ul li img{
+    width: 2.5rem;
+    height: 3.5rem;
+    margin: .2rem 0rem .2rem .2rem;
+}
+.recommend ul li .info{
+    width: 6.5rem;
+    float: right;
+/* background: antiquewhite; */
+    height: 3.5rem;
+    overflow: hidden;
+    margin: .2rem 0.2rem .2rem 0rem;
+}
+.recommend ul li .info h3{font-size: .4555rem;}
+.recommend ul li .info span{
+    font-size: .32rem;
+    padding: 0.3rem 0rem 0.2rem 0rem;
+    display: block;
+    margin: 0.1rem 0rem;
+}
+.recommend ul li .info span:nth-child(2){
+    padding-bottom: 0rem;
+}
+.recommend ul li .info P{
+    font-size: .3rem;
+    margin: .5rem 0rem 0rem 0rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+hr{border: .001rem solid #000;}
+.dx{text-align: center;padding: .1rem 0rem;font-size: .3rem;}
