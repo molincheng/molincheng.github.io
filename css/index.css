@@ -1,7 +1,7 @@
 body{
     background: beige;width: 10rem;
 }
-.search{height: 1rem;line-height: 1rem;font-size: .5rem;padding-left: 1rem;padding: 0.2rem 0.03rem;}
+.search{height: 1rem;line-height: 1rem;font-size: .5rem;padding-left: 1rem;padding: 0.2rem 0.03rem;margin-left: .5rem;}
 .search input{background: beige;padding-left: .3rem;font-size: .5rem;width: 6rem;border-bottom: .001rem solid;}
 .Home {
     width: 10rem;
