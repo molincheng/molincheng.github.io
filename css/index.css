@@ -2,7 +2,7 @@ body{
     background: beige;width: 10rem;;
 }
 .search{width: 13rem;height: 1rem;line-height: 1rem;font-size: .5rem;display: block;padding: .2rem 0rem 0rem 1rem;border-bottom: .02rem solid black;}
-.search input{ background: beige;padding-left: .3rem;font-size: .5rem;}
+.search input{float: left; background: beige;padding-left: .3rem;font-size: .5rem;}
 .search span{float: left;}
 .Home {
     width: 10rem;
