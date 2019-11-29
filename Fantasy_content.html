@@ -60,6 +60,7 @@ li{height: 1rem;font-size: .44rem;line-height: 1rem;text-indent: .5rem;border-bo
             let data = res.data.data
             var uls = this.document.querySelector('#recommend ul')
             lis = ''
+            console.log(data)
             for (let i = 0; i <= data.length - 1; i++) {
                 lis += `<li>${data[i]['chapter']}</li>`
                 uls.innerHTML = lis

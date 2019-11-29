@@ -28,7 +28,6 @@ body{
     color: black;
     text-decoration: none;
     border-radius: .3rem;
-    border: .01rem solid;
 }
 .Home .border::before {
     border-color: black;
