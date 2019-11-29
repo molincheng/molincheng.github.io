@@ -43,18 +43,18 @@
             line-height: 1.3rem;
             position: fixed;
             top: 2rem;
-            right: 0;
+            right: -0.1rem;
             margin-right: -.2rem;
             background: rgba(188, 205, 231, 0.5);
-            width: 2rem;
-            text-align:center;
+            width: 3.4rem;
+            text-align: center;
             border-radius: .2rem;
         }
     </style>
 </head>
 
 <body>
-    <div class="home" onclick="javascript:window.history.back()">主页</div>
+    <div class="home" onclick="javascript:window.history.back()">返回上一页</div>
     <h1></h1>
     <!-- <input id="button" type="button" value="主页"> -->
     <div class="recommend" id="recommend">
@@ -71,29 +71,31 @@
             if (a[1] == i) {
                 let title = document.title = text
                 let h1 = document.getElementsByTagName('h1')[0].innerHTML = text
-                console.log(a[1])
                 axios.get('https://a1067610892.github.io/-Novel_JSON/' + jsontype + '.json').then((res) => {
                     var uls = this.document.querySelector('#recommend ul')
                     let data = res.data
                     let lis = ''
-                    for (let i = 0; i <= data.length; i++) {
+                    for (let i = 0; i < data.length; i++) {
                         lis += `
-                <li>
-                <img src="${data[i].img}" alt="${data[i].name}">
-                <div class="info">
-                    <h3>${data[i].name}</h3>
-                    
-                    <span>作者：${data[i].author}</span>
-                    <span> 时间：${data[i].time}</span>
-                    
-                    <p class="intr">${data[i].introduce}</p>
-                </div>
-                </li>
+                        <li>
+                        <img src="${data[i].img}" alt="${data[i].name}">
+                        <div class="info">
+                            <h3>${data[i].name}</h3>
+                            <span>作者：${data[i].author}</span>
+                            <span> 时间：${data[i].time}</span>
+                            <p class="intr">${data[i].introduce}</p>
+                        </div>
+                        </li>
             `
                         uls.innerHTML = lis
                     }
+                    let liarr = uls.getElementsByTagName('li')
+                    for (let j = 0; j < liarr.length; j++) {
+                        liarr[j].onclick = () => {
+                        location.href = 'Fantasy_content.html?id='+ ++j
+                        }
+                    }
                 })
-
             }
         }
 
@@ -103,13 +105,9 @@
         { 'id': 3, 'name': '穿越小说', 'type': 'Passthrough' },
         { 'id': 4, 'name': '网游小说', 'type': 'Fantasy' },
         { 'id': 5, 'name': '科幻小说', 'type': 'Fantasy' }]
-        // console.log(obj)
         for (let i = 0; i < obj.length; i++) {
             getText(obj[i].id, obj[i].name, obj[i].type)
-
         }
-
     }
-
-
+    window.onclick = function(){console.log()}
 </script>

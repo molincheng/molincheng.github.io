@@ -1,8 +1,8 @@
 window.onload = function () {
-    let search = this.document.querySelector('#search');
-    search.onclick = function (e) {
-        this.value = ''
-    }
+    // let search = this.document.querySelector('#search');
+    // search.onclick = function (e) {
+    //     this.value = ''
+    // }
     axios.get('https://a1067610892.github.io/-Novel_JSON/Fantasy.json').then((res) => {
         // console.log(res.data)
         var data = res.data;
@@ -48,7 +48,10 @@ window.onload = function () {
         console.log(err)
     })
     let alis = document.querySelectorAll('a')
-    for(let i=0;i<=alis.length;i++){
+    for(let i=0;i<=alis.length-1;i++){
       alis[i].href = 'Fantasy.html?id='+i
+      this.console.log(i)
     }
 }
+
+
